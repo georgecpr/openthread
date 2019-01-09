@@ -1296,11 +1296,11 @@ AM_CONDITIONAL([OPENTHREAD_ENABLE_LINKER_MAP], [test "${enable_linker_map}" = "y
 
 AC_ARG_WITH(examples,
     [AS_HELP_STRING([--with-examples=TARGET],
-        [Specify the examples from one of: none, posix, cc2538, cc2650, cc2652, da15000, efr32, emsk, gp712, kw41z, nrf52840, samr21 @<:@default=none@:>@.])],
+        [Specify the examples from one of: none, posix, cc2538, cc2650, cc2652, da15000, efr32, emsk, gp712, kw41z, k32w042, nrf52840, samr21 @<:@default=none@:>@.])],
     [
         case "${with_examples}" in
 
-        none|posix|cc2538|cc2650|cc2652|da15000|efr32|emsk|gp712|kw41z|nrf52840|samr21)
+        none|posix|cc2538|cc2650|cc2652|da15000|efr32|emsk|gp712|kw41z|k32w042|nrf52840|samr21)
             ;;
         *)
             AC_MSG_ERROR([Invalid value ${with_examples} for --with-examples])
@@ -1358,6 +1358,11 @@ case ${with_examples} in
         AC_DEFINE_UNQUOTED([OPENTHREAD_EXAMPLES_KW41Z],[${OPENTHREAD_EXAMPLES_KW41Z}],[Define to 1 if you want to use kw41z examples])
         ;;
 
+    k32w042)
+        OPENTHREAD_EXAMPLES_K32W042=1
+        AC_DEFINE_UNQUOTED([OPENTHREAD_EXAMPLES_K32W042],[${OPENTHREAD_EXAMPLES_K32W042}],[Define to 1 if you want to use k32w042 examples])
+        ;;
+
     nrf52840)
         OPENTHREAD_EXAMPLES_NRF52840=1
         AC_DEFINE_UNQUOTED([OPENTHREAD_EXAMPLES_NRF52840],[${OPENTHREAD_EXAMPLES_NRF52840}],[Define to 1 if you want to use nrf52840 examples])
@@ -1403,6 +1408,9 @@ AM_CONDITIONAL([OPENTHREAD_EXAMPLES_GP712], [test "${OPENTHREAD_EXAMPLES}" = "gp
 
 AC_SUBST(OPENTHREAD_EXAMPLES_KW41Z)
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_KW41Z], [test "${OPENTHREAD_EXAMPLES}" = "kw41z"])
+
+AC_SUBST(OPENTHREAD_EXAMPLES_K32W042)
+AM_CONDITIONAL([OPENTHREAD_EXAMPLES_K32W042], [test "${OPENTHREAD_EXAMPLES}" = "k32w042"])
 
 AC_SUBST(OPENTHREAD_EXAMPLES_NRF52840)
 AM_CONDITIONAL([OPENTHREAD_EXAMPLES_NRF52840], [test "${OPENTHREAD_EXAMPLES}" = "nrf52840"])
@@ -1556,6 +1564,7 @@ examples/platforms/efr32/Makefile
 examples/platforms/emsk/Makefile
 examples/platforms/gp712/Makefile
 examples/platforms/kw41z/Makefile
+examples/platforms/k32w042/Makefile
 examples/platforms/nrf52840/Makefile
 examples/platforms/samr21/Makefile
 examples/platforms/posix/Makefile

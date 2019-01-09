@@ -100,6 +100,15 @@ set -x
     git checkout -- . || die
     git clean -xfd || die
     ./bootstrap || die
+    COMMISSIONER=1 JOINER=1 DHCP6_CLIENT=1 DHCP6_SERVER=1 DNS_CLIENT=1 make -f examples/Makefile-k32w042 || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-mtd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-mtd || die
+
+    git checkout -- . || die
+    git clean -xfd || die
+    ./bootstrap || die
     BORDER_ROUTER=1 COAP=1 COMMISSIONER=1 DHCP6_CLIENT=1 DHCP6_SERVER=1 DNS_CLIENT=1 FULL_LOGS=1 JOINER=1 MAC_FILTER=1 MTD_NETDIAG=1 SERVICE=1 TMF_PROXY=1 make -f examples/Makefile-nrf52840 || die
     arm-none-eabi-size  output/nrf52840/bin/ot-cli-ftd || die
     arm-none-eabi-size  output/nrf52840/bin/ot-cli-mtd || die
@@ -169,6 +178,15 @@ set -x
     git checkout -- . || die
     git clean -xfd || die
     ./bootstrap || die
+    COMMISSIONER=1 JOINER=1 DHCP6_CLIENT=1 DHCP6_SERVER=1 DNS_CLIENT=1 make -f examples/Makefile-k32w042 || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-mtd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-mtd || die
+
+    git checkout -- . || die
+    git clean -xfd || die
+    ./bootstrap || die
     BORDER_ROUTER=1 COAP=1 COMMISSIONER=1 DHCP6_CLIENT=1 DHCP6_SERVER=1 DNS_CLIENT=1 FULL_LOGS=1 JOINER=1 MAC_FILTER=1 MTD_NETDIAG=1 SERVICE=1 TMF_PROXY=1 make -f examples/Makefile-nrf52840 || die
     arm-none-eabi-size  output/nrf52840/bin/ot-cli-ftd || die
     arm-none-eabi-size  output/nrf52840/bin/ot-cli-mtd || die
@@ -234,6 +252,15 @@ set -x
     arm-none-eabi-size  output/kw41z/bin/ot-cli-mtd || die
     arm-none-eabi-size  output/kw41z/bin/ot-ncp-ftd || die
     arm-none-eabi-size  output/kw41z/bin/ot-ncp-mtd || die
+
+    git checkout -- . || die
+    git clean -xfd || die
+    ./bootstrap || die
+    COMMISSIONER=1 JOINER=1 DHCP6_CLIENT=1 DHCP6_SERVER=1 DNS_CLIENT=1 make -f examples/Makefile-k32w042 || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-mtd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-mtd || die
 
     git checkout -- . || die
     git clean -xfd || die
@@ -314,6 +341,15 @@ set -x
     arm-none-eabi-size  output/kw41z/bin/ot-cli-mtd || die
     arm-none-eabi-size  output/kw41z/bin/ot-ncp-ftd || die
     arm-none-eabi-size  output/kw41z/bin/ot-ncp-mtd || die
+
+    git checkout -- . || die
+    git clean -xfd || die
+    ./bootstrap || die
+    COMMISSIONER=1 JOINER=1 DHCP6_CLIENT=1 DHCP6_SERVER=1 DNS_CLIENT=1 make -f examples/Makefile-k32w042 || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-cli-mtd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-ftd || die
+    arm-none-eabi-size  output/k32w042/bin/ot-ncp-mtd || die
 
     git checkout -- . || die
     git clean -xfd || die
